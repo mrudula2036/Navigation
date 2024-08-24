@@ -1,0 +1,35 @@
+/* CSS for the glowing circle */
+.glowing-circle {
+    background: rgba(0, 0, 255, 0.3);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
+}
+
+/* Basic styling for suggestions and favorites list */
+#start-suggestions, #destination-suggestions {
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 200px;
+}
+
+#start-suggestions div, #destination-suggestions div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#start-suggestions div:hover, #destination-suggestions div:hover {
+    background-color: #f0f0f0;
+}
+/* Add this to your CSS file */
+.glowing-circle {
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(0,0,255,0.6) 100%);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #00f;
+}

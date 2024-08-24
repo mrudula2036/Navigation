@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.1/mapbox-gl-directions.css' rel='stylesheet' />
+    <style>
+        #map { height: 500px; width: 100%; }
+        .glowing-circle {
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(0,0,255,0.6) 100%);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #00f;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <input type="text" id="start" placeholder="Start Location" oninput="fetchStartSuggestions()">
+    <div id="start-suggestions"></div>
+    <input type="text" id="destination" placeholder="Destination Location" oninput="fetchDestinationSuggestions()">
+    <div id="destination-suggestions"></div>
+    <button onclick="setCurrentLocation('start')">Set Current Location as Start</button>
+    <button onclick="setCurrentLocation('destination')">Set Current Location as Destination</button>
+    <button onclick="startNavigation()">Start Navigation</button>
+    <div id="time-estimates"></div>
+    <div id="selected-mode">Selected mode: Walking</div>
+    <input type="text" id="favorite-name" placeholder="Favorite Name">
+    <button onclick="saveFavorite()">Save Favorite</button>
+    <ul id="favorites-list"></ul>
+    <div id="instructions" style="margin-top: 10px;"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.1/mapbox-gl-directions.js'></script>
+    <script src="script.js"></script>
+</body>
+</html>
